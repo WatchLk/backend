@@ -1,0 +1,21 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/WatchLk.AuthProcessing.Api/bin/Debug/net8.0
+/WatchLk.AuthProcessing.Api/obj
+/WatchLk.AuthProcessing.Application/bin/Debug/net8.0
+/WatchLk.AuthProcessing.Application/obj
+/WatchLk.AuthProcessing.Domains/bin/Debug/net8.0
+/WatchLk.AuthProcessing.Domains/obj
+/WatchLk.AuthProcessing.Infrastructure/bin/Debug/net8.0
+/WatchLk.AuthProcessing.Infrastructure/obj
+/WatchLk.ProductProcessing.Application/bin/Debug/net8.0
+/WatchLk.ProductProcessing.Application/obj
+/WatchLk.ProductProcessing.Domains/bin/Debug/net8.0
+/WatchLk.ProductProcessing.Domains/obj
+/WatchLk.ProductProcessing.Infrastructure/bin/Debug/net8.0
+/WatchLk.ProductProcessing.Infrastructure/obj
+/WatchLk.ProductService/bin/Debug/net8.0
+/WatchLk.ProductService/obj
