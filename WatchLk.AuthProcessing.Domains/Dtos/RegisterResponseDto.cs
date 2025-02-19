@@ -2,10 +2,9 @@
 
 namespace WatchLk.AuthProcessing.Domains.Dtos
 {
-    public record ResponseDto
+    public record RegisterResponseDto
     (
         bool Succeeded,
-        IdentityResult? Result,
-        IEnumerable<IdentityError>? Error
+        List<string>? Errors
     );
 }

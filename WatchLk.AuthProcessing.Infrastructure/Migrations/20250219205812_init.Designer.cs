@@ -12,7 +12,7 @@ using WatchLk.AuthProcessing.Infrastructure;
 namespace WatchLk.AuthProcessing.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250218180329_init")]
+    [Migration("20250219205812_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -50,6 +50,20 @@ namespace WatchLk.AuthProcessing.Infrastructure.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            Name = "admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            Name = "client",
+                            NormalizedName = "CLIENT"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -137,6 +151,13 @@ namespace WatchLk.AuthProcessing.Infrastructure.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "1",
+                            RoleId = "1"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -271,6 +292,26 @@ namespace WatchLk.AuthProcessing.Infrastructure.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "b654f34d-472b-40fe-b4b9-e7831fdd562c",
+                            Email = "admin.watchlk@gmail.com",
+                            EmailConfirmed = false,
+                            FirstName = "Lahiru",
+                            LastName = "Nanayakkara",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN.WATCHLK@GMAIL.COM",
+                            NormalizedUserName = "ADMIN.WATCHLK@GMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIUp+fVfoUxJySW1ggKq0P4hUKXndVAKyc03FMcNyNsCFMiKDCcML4qxoWkKpoEG3Q==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "b8c0259b-c875-4a73-9f9c-4aea672fc9bd",
+                            TwoFactorEnabled = false,
+                            UserName = "admin.watchlk@gmail.com"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

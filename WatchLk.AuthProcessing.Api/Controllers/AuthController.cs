@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.RegularExpressions;
+using WatchLk.AuthProcessing.Api.Helpers;
 using WatchLk.AuthProcessing.Application;
 using WatchLk.AuthProcessing.Domains.Dtos;
 
@@ -12,28 +14,54 @@ namespace WatchLk.AuthProcessing.Api.Controllers
         private readonly IAuthRepository _authRepository = authRepository;
 
 
-        //[HttpPost(Name = "Login")]
-        //public async Task<IResult> Login([FromBody] LoginDto login)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return Results.BadRequest("All fields are required");
-        //    }
-        //    return Results.Accepted();
-        //}
+        [HttpPost]
+        [Route("login")]
+        public async Task<IResult> Login([FromBody] LoginRequestDto loginDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Results.BadRequest("All fields are required");
+            }
+            try
+            {
+                var result = await _authRepository.Login(loginDto);
+                if (result is null)
+                {
+                    return Results.BadRequest(new LoginResponseDto(false, loginDto.Email, null, null, ["Something went wrong"]));
+                }
 
-        [HttpPost(Name = "Register")]
-        public async Task<IResult> Register([FromBody] RegisterDto registerDto)
+                if (!result.Succeeded)
+                {
+                    return Results.BadRequest(result);
+                }
+
+                return Results.Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return Results.BadRequest(new LoginResponseDto(false, loginDto.Email, null, null, [ex.Message]));
+            }
+        }
+
+        [HttpPost]
+        [Route("register")]
+        public async Task<IResult> Register([FromBody] RegisterRequestDto registerDto)
         {
             if (!ModelState.IsValid)
             {
                 return Results.BadRequest("All fields are required");
             }
 
+            if (!Validators.IsValidEmail(registerDto.Email))
+            {
+                return Results.BadRequest(new RegisterResponseDto(false, ["Email is not valid"]));
+            }
+
             var result = await _authRepository.Register(registerDto);
+
             if(result is null)
             {
-                return Results.BadRequest("Something went wrong");
+                return Results.BadRequest(new RegisterResponseDto(false, ["Something went wrong"]));
             }
 
             if (result.Succeeded)
@@ -43,5 +71,7 @@ namespace WatchLk.AuthProcessing.Api.Controllers
 
             return Results.BadRequest(result);
         }
+
+        
     }
 }

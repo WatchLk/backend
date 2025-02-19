@@ -1,10 +1,8 @@
 ﻿
 namespace WatchLk.AuthProcessing.Domains.Dtos
 {
-    public record RegisterDto
+    public record LoginRequestDto
     (
-        string FirstName,
-        string LastName,
         string Email,
         string Password
     );

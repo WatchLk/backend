@@ -4,18 +4,41 @@ using WatchLk.AuthProcessing.Domains.Models;
 
 namespace WatchLk.AuthProcessing.Application
 {
-    public class AuthRepository(UserManager<User> userManager) : IAuthRepository
+    public class AuthRepository(
+        UserManager<User> userManager
+        ) : IAuthRepository
     {
         private readonly UserManager<User> _userManager = userManager;
 
-        public async Task<ResponseDto?> Login(LoginDto loginDto)
+        public async Task<LoginResponseDto?> Login(LoginRequestDto loginDto)
         {
-            var user  = await _userManager.FindByEmailAsync(loginDto.Email);
 
-            return new ResponseDto(true,null,null);
+            try
+            {
+                var user = await _userManager.FindByEmailAsync(loginDto.Email);
+
+                if (user is null)
+                {
+                    return new LoginResponseDto(false, loginDto.Email, null, null, ["User doesn't exist"]);
+                }
+                var checkPasswordResult = await _userManager.CheckPasswordAsync(user, loginDto.Password);
+
+                if (!checkPasswordResult)
+                {
+                    return new LoginResponseDto(false, loginDto.Email, null, null, ["Invalid password"]);
+                }
+                var roles = await _userManager.GetRolesAsync(user);
+
+                return new LoginResponseDto(checkPasswordResult, loginDto.Email, "<token_value>", roles.FirstOrDefault(), null);
+
+
+            } catch (Exception)
+            {
+                throw;
+            }
         }
 
-        public async Task<ResponseDto?> Register(RegisterDto registerDto)
+        public async Task<RegisterResponseDto?> Register(RegisterRequestDto registerDto)
         {
             var user = new User
             {
@@ -27,14 +50,30 @@ namespace WatchLk.AuthProcessing.Application
 
             try
             {
+
+                var userExist = await _userManager.FindByEmailAsync(registerDto.Email);
+
+                if (userExist != null)
+                {
+                    return new RegisterResponseDto(false, ["Email is already taken"]);
+                }
+
                 var result = await _userManager.CreateAsync(user, registerDto.Password);
 
                 if (result.Succeeded)
                 {
-                    return new ResponseDto(result.Succeeded, result, null);
+                    var userRole = await _userManager.AddToRoleAsync(user, registerDto.Role.ToLower());
+
+                    if (userRole.Succeeded)
+                    {
+                        return new RegisterResponseDto(result.Succeeded, []);
+                    }
+
+                    return new RegisterResponseDto(userRole.Succeeded, userRole.Errors.Select(e => e.Description).ToList());
                 }
 
-                return new ResponseDto(result.Succeeded, result, result.Errors);
+                List<string> errors = result.Errors.Select(x => x.Description).ToList();
+                return new RegisterResponseDto(result.Succeeded, errors);
             }
             catch (Exception)
             {

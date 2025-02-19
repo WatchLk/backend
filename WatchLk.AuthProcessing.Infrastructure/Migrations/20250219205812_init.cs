@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace WatchLk.AuthProcessing.Infrastructure.Migrations
 {
     /// <inheritdoc />
@@ -182,6 +184,25 @@ namespace WatchLk.AuthProcessing.Infrastructure.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { "1", null, "admin", "ADMIN" },
+                    { "2", null, "client", "CLIENT" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "1", 0, "b654f34d-472b-40fe-b4b9-e7831fdd562c", "admin.watchlk@gmail.com", false, "Lahiru", "Nanayakkara", false, null, "ADMIN.WATCHLK@GMAIL.COM", "ADMIN.WATCHLK@GMAIL.COM", "AQAAAAIAAYagAAAAEIUp+fVfoUxJySW1ggKq0P4hUKXndVAKyc03FMcNyNsCFMiKDCcML4qxoWkKpoEG3Q==", null, false, "b8c0259b-c875-4a73-9f9c-4aea672fc9bd", false, "admin.watchlk@gmail.com" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { "1", "1" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Addresses_UserId",

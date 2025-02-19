@@ -6,7 +6,7 @@ namespace WatchLk.AuthProcessing.Application
 {
     public interface IAuthRepository
     {
-        Task<ResponseDto?> Login(LoginDto loginDto);
-        Task<ResponseDto?> Register(RegisterDto registerDto);
+        Task<LoginResponseDto?> Login(LoginRequestDto loginDto);
+        Task<RegisterResponseDto?> Register(RegisterRequestDto registerDto);
     }
 }
