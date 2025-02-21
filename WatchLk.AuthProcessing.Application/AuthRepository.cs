@@ -1,14 +1,17 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using WatchLk.AuthProcessing.Domains.Dtos;
+using WatchLk.AuthProcessing.Domains.Mappings;
 using WatchLk.AuthProcessing.Domains.Models;
 
 namespace WatchLk.AuthProcessing.Application
 {
     public class AuthRepository(
-        UserManager<User> userManager
+        UserManager<User> userManager,
+        ITokenRepository tokenRepository
         ) : IAuthRepository
     {
         private readonly UserManager<User> _userManager = userManager;
+        private readonly ITokenRepository _tokenRepository = tokenRepository;
 
         public async Task<LoginResponseDto?> Login(LoginRequestDto loginDto)
         {
@@ -19,17 +22,18 @@ namespace WatchLk.AuthProcessing.Application
 
                 if (user is null)
                 {
-                    return new LoginResponseDto(false, loginDto.Email, null, null, ["User doesn't exist"]);
+                    return new LoginResponseDto(false, null, null, ["User doesn't exist"]);
                 }
                 var checkPasswordResult = await _userManager.CheckPasswordAsync(user, loginDto.Password);
 
                 if (!checkPasswordResult)
                 {
-                    return new LoginResponseDto(false, loginDto.Email, null, null, ["Invalid password"]);
+                    return new LoginResponseDto(false, null, null, ["Invalid password"]);
                 }
                 var roles = await _userManager.GetRolesAsync(user);
-
-                return new LoginResponseDto(checkPasswordResult, loginDto.Email, "<token_value>", roles.FirstOrDefault(), null);
+                var token = _tokenRepository.CreateJwtToken(user, roles.FirstOrDefault("client"));
+                var userDto =  user.toDto(roles.FirstOrDefault("client"));
+                return new LoginResponseDto(checkPasswordResult, userDto, token, null);
 
 
             } catch (Exception)
@@ -62,7 +66,7 @@ namespace WatchLk.AuthProcessing.Application
 
                 if (result.Succeeded)
                 {
-                    var userRole = await _userManager.AddToRoleAsync(user, registerDto.Role.ToLower());
+                    var userRole = await _userManager.AddToRoleAsync(user, registerDto.Role!=null?registerDto.Role.ToLower():"client");
 
                     if (userRole.Succeeded)
                     {

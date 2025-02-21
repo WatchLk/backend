@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System.Text.RegularExpressions;
+﻿using Microsoft.AspNetCore.Mvc;
 using WatchLk.AuthProcessing.Api.Helpers;
 using WatchLk.AuthProcessing.Application;
 using WatchLk.AuthProcessing.Domains.Dtos;
@@ -27,7 +25,7 @@ namespace WatchLk.AuthProcessing.Api.Controllers
                 var result = await _authRepository.Login(loginDto);
                 if (result is null)
                 {
-                    return Results.BadRequest(new LoginResponseDto(false, loginDto.Email, null, null, ["Something went wrong"]));
+                    return Results.BadRequest(new LoginResponseDto(false, null, null, ["Something went wrong"]));
                 }
 
                 if (!result.Succeeded)
@@ -39,7 +37,7 @@ namespace WatchLk.AuthProcessing.Api.Controllers
             }
             catch (Exception ex)
             {
-                return Results.BadRequest(new LoginResponseDto(false, loginDto.Email, null, null, [ex.Message]));
+                return Results.BadRequest(new LoginResponseDto(false, null, null, [ex.Message]));
             }
         }
 

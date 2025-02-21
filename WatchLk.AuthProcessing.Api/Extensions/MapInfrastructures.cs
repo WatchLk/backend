@@ -27,6 +27,7 @@ namespace WatchLk.AuthProcessing.Api.Extensions
 
 
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<ITokenRepository, TokenRepository>();
         }
     }
 }

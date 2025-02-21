@@ -5,9 +5,8 @@ namespace WatchLk.AuthProcessing.Domains.Dtos
     public record LoginResponseDto
     (
         bool Succeeded,
-        string? Email,
+        UserDto? User,
         string? Token,
-        string? Role,
         List<string>? Errors
     );
 }

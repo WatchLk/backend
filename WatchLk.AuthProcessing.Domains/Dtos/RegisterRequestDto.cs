@@ -7,6 +7,6 @@ namespace WatchLk.AuthProcessing.Domains.Dtos
         string LastName,
         string Email,
         string Password,
-        string Role
+        string? Role
     );
 }
