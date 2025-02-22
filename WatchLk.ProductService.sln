@@ -15,13 +15,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WatchLk.ProductProcessing.A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AuthService", "AuthService", "{884D07B9-A390-4D9E-AFF3-E32DAEF6CF83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchLk.AuthProcessing.Api", "WatchLk.AuthProcessing.Api\WatchLk.AuthProcessing.Api.csproj", "{52B37A83-4229-423D-82E4-E37BAAEB631B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WatchLk.AuthProcessing.Api", "WatchLk.AuthProcessing.Api\WatchLk.AuthProcessing.Api.csproj", "{52B37A83-4229-423D-82E4-E37BAAEB631B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchLk.AuthProcessing.Application", "WatchLk.AuthProcessing.Application\WatchLk.AuthProcessing.Application.csproj", "{576E3F9A-6D1D-4E47-84E2-A79EB8F2ABE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WatchLk.AuthProcessing.Application", "WatchLk.AuthProcessing.Application\WatchLk.AuthProcessing.Application.csproj", "{576E3F9A-6D1D-4E47-84E2-A79EB8F2ABE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchLk.AuthProcessing.Domains", "WatchLk.AuthProcessing.Domains\WatchLk.AuthProcessing.Domains.csproj", "{13DCC294-A263-4532-98AF-AE63F024C25C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WatchLk.AuthProcessing.Domains", "WatchLk.AuthProcessing.Domains\WatchLk.AuthProcessing.Domains.csproj", "{13DCC294-A263-4532-98AF-AE63F024C25C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchLk.AuthProcessing.Infrastructure", "WatchLk.AuthProcessing.Infrastructure\WatchLk.AuthProcessing.Infrastructure.csproj", "{E492E4A6-9F66-4AB5-B56B-3F7ACF168E80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WatchLk.AuthProcessing.Infrastructure", "WatchLk.AuthProcessing.Infrastructure\WatchLk.AuthProcessing.Infrastructure.csproj", "{E492E4A6-9F66-4AB5-B56B-3F7ACF168E80}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CartService", "CartService", "{D5703138-B40F-4707-ABAE-E236A2C0CEDE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WatchLk.CartService.Api", "WatchLk.CartService.Api\WatchLk.CartService.Api.csproj", "{D288C4CC-9E9F-4D72-A79C-04841C46E2AB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WatchLk.CartService.Application", "WatchLk.CartService.Application\WatchLk.CartService.Application.csproj", "{10890DC3-3A3D-45F0-871E-285EBE48416D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WatchLk.CartService.Domains", "WatchLk.CartService.Domains\WatchLk.CartService.Domains.csproj", "{7DD090E1-8A38-4057-9DD0-8F8610B74105}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WatchLk.CartService.Infrastructure", "WatchLk.CartService.Infrastructure\WatchLk.CartService.Infrastructure.csproj", "{CD0BFD0D-B186-4D6C-AA1D-C582B2083F2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedLibrary", "SharedLibrary", "{EEECDF2A-E4D6-4218-8CF8-7E9C06B0F5D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchLk.SharedLibrary", "WatchLk.SharedLibrary\WatchLk.SharedLibrary.csproj", "{47E58F8D-BCDD-4882-BD3E-33A9ED46631C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +75,26 @@ Global
 		{E492E4A6-9F66-4AB5-B56B-3F7ACF168E80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E492E4A6-9F66-4AB5-B56B-3F7ACF168E80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E492E4A6-9F66-4AB5-B56B-3F7ACF168E80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D288C4CC-9E9F-4D72-A79C-04841C46E2AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D288C4CC-9E9F-4D72-A79C-04841C46E2AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D288C4CC-9E9F-4D72-A79C-04841C46E2AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D288C4CC-9E9F-4D72-A79C-04841C46E2AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10890DC3-3A3D-45F0-871E-285EBE48416D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10890DC3-3A3D-45F0-871E-285EBE48416D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10890DC3-3A3D-45F0-871E-285EBE48416D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10890DC3-3A3D-45F0-871E-285EBE48416D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DD090E1-8A38-4057-9DD0-8F8610B74105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DD090E1-8A38-4057-9DD0-8F8610B74105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DD090E1-8A38-4057-9DD0-8F8610B74105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DD090E1-8A38-4057-9DD0-8F8610B74105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD0BFD0D-B186-4D6C-AA1D-C582B2083F2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD0BFD0D-B186-4D6C-AA1D-C582B2083F2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD0BFD0D-B186-4D6C-AA1D-C582B2083F2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD0BFD0D-B186-4D6C-AA1D-C582B2083F2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47E58F8D-BCDD-4882-BD3E-33A9ED46631C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47E58F8D-BCDD-4882-BD3E-33A9ED46631C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47E58F8D-BCDD-4882-BD3E-33A9ED46631C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47E58F8D-BCDD-4882-BD3E-33A9ED46631C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +108,11 @@ Global
 		{576E3F9A-6D1D-4E47-84E2-A79EB8F2ABE6} = {884D07B9-A390-4D9E-AFF3-E32DAEF6CF83}
 		{13DCC294-A263-4532-98AF-AE63F024C25C} = {884D07B9-A390-4D9E-AFF3-E32DAEF6CF83}
 		{E492E4A6-9F66-4AB5-B56B-3F7ACF168E80} = {884D07B9-A390-4D9E-AFF3-E32DAEF6CF83}
+		{D288C4CC-9E9F-4D72-A79C-04841C46E2AB} = {D5703138-B40F-4707-ABAE-E236A2C0CEDE}
+		{10890DC3-3A3D-45F0-871E-285EBE48416D} = {D5703138-B40F-4707-ABAE-E236A2C0CEDE}
+		{7DD090E1-8A38-4057-9DD0-8F8610B74105} = {D5703138-B40F-4707-ABAE-E236A2C0CEDE}
+		{CD0BFD0D-B186-4D6C-AA1D-C582B2083F2D} = {D5703138-B40F-4707-ABAE-E236A2C0CEDE}
+		{47E58F8D-BCDD-4882-BD3E-33A9ED46631C} = {EEECDF2A-E4D6-4218-8CF8-7E9C06B0F5D2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {400FEF64-EFEE-4E04-BB48-93432B05B4B6}

@@ -1,0 +1,12 @@
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.CartService.Domains\bin\Debug\net8.0\WatchLk.CartService.Domains.deps.json
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.CartService.Domains\bin\Debug\net8.0\WatchLk.CartService.Domains.dll
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.CartService.Domains\bin\Debug\net8.0\WatchLk.CartService.Domains.pdb
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.CartService.Domains\obj\Debug\net8.0\WatchLk.CartService.Domains.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.CartService.Domains\obj\Debug\net8.0\WatchLk.CartService.Domains.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.CartService.Domains\obj\Debug\net8.0\WatchLk.CartService.Domains.AssemblyInfo.cs
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.CartService.Domains\obj\Debug\net8.0\WatchLk.CartService.Domains.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.CartService.Domains\obj\Debug\net8.0\WatchLk.CartService.Domains.sourcelink.json
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.CartService.Domains\obj\Debug\net8.0\WatchLk.CartService.Domains.dll
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.CartService.Domains\obj\Debug\net8.0\refint\WatchLk.CartService.Domains.dll
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.CartService.Domains\obj\Debug\net8.0\WatchLk.CartService.Domains.pdb
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.CartService.Domains\obj\Debug\net8.0\ref\WatchLk.CartService.Domains.dll

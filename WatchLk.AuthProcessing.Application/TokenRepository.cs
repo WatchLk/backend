@@ -24,6 +24,8 @@ namespace WatchLk.AuthProcessing.Application
                     new(ClaimTypes.Email, user.Email!),
                     new(ClaimTypes.Role, role)
                 ]),
+                Issuer = _configuration["Jwt:Issuer"],
+                Audience = _configuration["Jwt:Audience"],
                 Expires = System.DateTime.UtcNow.AddDays(1),
                 SigningCredentials = new SigningCredentials(
                     signInKey, 

@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using WatchLk.AuthProcessing.Api.Extensions;
+using WatchLk.AuthProcessing.Infrastructure;
+using WatchLk.SharedLibrary.DependencyInjection;
+using WatchLk.SharedLibrary.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,17 +15,8 @@ builder.Services.AddSwaggerGen();
 // Custom configurations and service registrations
 builder.Services.AddInfrastructure(builder.Configuration);
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-        .AddJwtBearer(t =>
-        {
-            t.SaveToken = false;
-            t.TokenValidationParameters = new TokenValidationParameters
-            {
-                ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new SymmetricSecurityKey(
-                    Encoding.UTF8.GetBytes(builder.Configuration["Jwt:key"]!))
-            };
-        });
+//Add shared services
+builder.Services.AddSharedServices<AppDbContext>(builder.Configuration);
 
 builder.Services.AddCors(options =>
 {
@@ -33,7 +24,8 @@ builder.Services.AddCors(options =>
     {
         p.WithOrigins("http://localhost:5173")
         .AllowAnyHeader()
-        .AllowAnyMethod();
+        .AllowAnyMethod()
+        .SetPreflightMaxAge(TimeSpan.FromMinutes(10));
     });
 });
 
@@ -56,6 +48,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-await app.MigratePendings();
+await app.Services.ApplyPendingMigrationsAsync<AppDbContext>();
 
 app.Run();

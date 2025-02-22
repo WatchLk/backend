@@ -10,8 +10,6 @@ namespace WatchLk.AuthProcessing.Api.Extensions
     {
         public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<AppDbContext>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("AuthDbString")));
 
             services.AddIdentity<User, IdentityRole>(options =>
             {

@@ -70,6 +70,14 @@ namespace WatchLk.AuthProcessing.Api.Controllers
             return Results.BadRequest(result);
         }
 
-        
+        //[HttpGet]
+        //[Route("GetUserIdByToken")]
+        //public async Task<IResult> GetUserIdByToken()
+        //{
+        //    var user = HttpContext.Request.Headers.Authorization;
+        //    var token = user.ToString().Replace("Bearer ", "");
+        //    var res = await _tokenService.VerifyUserAuthority(token, "1ec5c687-a34b-4ef6-a6d1-12b7b8bf7262");
+        //    return Results.Ok(res);
+        //}
     }
 }

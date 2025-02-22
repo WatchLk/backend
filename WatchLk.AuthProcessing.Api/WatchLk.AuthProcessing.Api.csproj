@@ -22,6 +22,7 @@
     <ProjectReference Include="..\WatchLk.AuthProcessing.Application\WatchLk.AuthProcessing.Application.csproj" />
     <ProjectReference Include="..\WatchLk.AuthProcessing.Domains\WatchLk.AuthProcessing.Domains.csproj" />
     <ProjectReference Include="..\WatchLk.AuthProcessing.Infrastructure\WatchLk.AuthProcessing.Infrastructure.csproj" />
+    <ProjectReference Include="..\WatchLk.SharedLibrary\WatchLk.SharedLibrary.csproj" />
   </ItemGroup>
 
 </Project>

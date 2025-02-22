@@ -1,0 +1,15 @@
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.SharedLibrary\bin\Debug\net8.0\WatchLk.SharedLibrary.deps.json
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.SharedLibrary\bin\Debug\net8.0\WatchLk.SharedLibrary.runtimeconfig.json
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.SharedLibrary\bin\Debug\net8.0\WatchLk.SharedLibrary.dll
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.SharedLibrary\bin\Debug\net8.0\WatchLk.SharedLibrary.pdb
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.SharedLibrary\obj\Debug\net8.0\WatchLk.SharedLibrary.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.SharedLibrary\obj\Debug\net8.0\WatchLk.SharedLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.SharedLibrary\obj\Debug\net8.0\WatchLk.SharedLibrary.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.SharedLibrary\obj\Debug\net8.0\WatchLk.SharedLibrary.AssemblyInfo.cs
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.SharedLibrary\obj\Debug\net8.0\WatchLk.SharedLibrary.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.SharedLibrary\obj\Debug\net8.0\WatchLk.SharedLibrary.sourcelink.json
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.SharedLibrary\obj\Debug\net8.0\WatchLk.SharedLibrary.dll
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.SharedLibrary\obj\Debug\net8.0\refint\WatchLk.SharedLibrary.dll
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.SharedLibrary\obj\Debug\net8.0\WatchLk.SharedLibrary.pdb
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.SharedLibrary\obj\Debug\net8.0\WatchLk.SharedLibrary.genruntimeconfig.cache
+C:\Users\PC\source\repos\WatchLk.ProductService\WatchLk.SharedLibrary\obj\Debug\net8.0\ref\WatchLk.SharedLibrary.dll

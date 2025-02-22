@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\WatchLk.CartService.Api.props" />
+</Project>
